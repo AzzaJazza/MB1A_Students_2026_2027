@@ -1,0 +1,32 @@
+---
+title: "hpa_quarto"
+author: "Aryan Jaiswal"
+editor: visual
+---
+
+Find the sum of genes elevated in the fore brain in humans, pigs and mice:
+
+```{r}
+h_cerebral_cortex <- 180
+h_basal_ganglia <- 83
+h_thalamus <- 57
+h_hypothalamus <- 110
+Human_genes <- sum(h_cerebral_cortex,h_basal_ganglia,h_thalamus,h_hypothalamus)
+print(Human_genes)
+
+p_cerebral_cortex <- 109
+p_basal_ganglia <- 157
+p_thalamus <- 31
+p_hypothalamus <- 45
+pig_genes <- sum(p_cerebral_cortex,p_basal_ganglia,p_thalamus,p_hypothalamus)
+print(pig_genes)
+
+m_cerebral_cortex <- 55
+m_basal_ganglia <- 185
+m_thalamus <- 60
+m_hypothalamus <- 98
+mice_genes <- sum(m_cerebral_cortex,m_basal_ganglia,m_thalamus,m_hypothalamus)
+print(mice_genes)
+```
+
+Humans have the largest number of regionally elevated genes in the fore brain
