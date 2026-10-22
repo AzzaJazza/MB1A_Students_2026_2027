@@ -1,0 +1,123 @@
+---
+title: "Practical_1_Introduction_to_R/prac1_exercises"
+author: "Aryan Jaiswal"
+---
+```{r}
+library(tidyverse)
+library(gt)
+```
+
+
+Round a number:
+```{r}
+num <- 3.14159
+rounded_num <- round(num)
+print(rounded_num)
+```
+
+Argument order:
+```{r}
+print(rep(5,7))
+print(rep(times = 7, x =5))
+```
+Character, numerical and logical variables
+```{r}
+char <- "A"
+num <- 1
+logi <- TRUE
+print(paste(char,class(char)))
+print(paste(num,class(char)))
+print(paste(logi,class(char)))
+```
+Using variables of different types:
+```{r}
+cell_ID_1 <- "CX1"
+cell_ID_2 <- "CX2"
+treated_1 <- TRUE
+treated_1 <- FALSE
+num_cells_before_1 <- 5415
+num_cells_before_2 <- 8123
+num_cells_after_1 <- 1432
+num_cells_after_2 <- 7543
+
+```
+
+Exploring the quirks of R
+```{r}
+print(TRUE + TRUE)
+print(TRUE + FALSE)
+print(5 + TRUE)
+
+x <- 0 / 0
+print(x)
+print(is.na(x))
+print(is.nan(x))
+
+print(1/0)
+print(-1/0)
+```
+
+Vectors
+```{r}
+cell_ID_1 <- "CX1"
+cell_ID_2 <- "CX2"
+treated_1 <- TRUE
+treated_2 <- FALSE
+num_cells_before_1 <- 5415
+num_cells_before_2 <- 8123
+num_cells_after_1 <- 1432
+num_cells_after_2 <- 7543
+
+col1 <- c(cell_ID_1,cell_ID_2)
+col2 <- c(treated_1,treated_2)
+col3 <- c(num_cells_before_1,num_cells_before_2)
+col4 <- c(num_cells_after_1,num_cells_after_2)
+```
+
+Indexing
+```{r}
+all_my_pets <- c("dog", "horse", "guinea pig", "chicken", "cat")
+fourth <- all_my_pets[4]
+print(fourth)
+
+```
+
+Vectorisation
+```{r}
+x <- c(2, -4, 6, -2)
+abs(x)
+
+
+```
+
+Creating a data frame
+```{r}
+library(tidyverse)
+library(gt)
+
+cell_ID_1 <- "CX1"
+cell_ID_2 <- "CX2"
+treated_1 <- TRUE
+treated_2 <- FALSE
+num_cells_before_1 <- 5415
+num_cells_before_2 <- 8123
+num_cells_after_1 <- 1432
+num_cells_after_2 <- 7543
+
+col1 <- c(cell_ID_1,cell_ID_2)
+col2 <- c(treated_1,treated_2)
+col3 <- c(num_cells_before_1,num_cells_before_2)
+col4 <- c(num_cells_after_1,num_cells_after_2)
+
+table <- tibble(
+  cell_id = col1,
+  treated = col2,
+  num_cells_before = col3,
+  num_cells_after = col4
+)
+
+gt(table)
+```
+
+
+
