@@ -1,0 +1,39 @@
+---
+title: "Worked_example"
+author: "Aryan Jaiswal"
+---
+
+```{r}
+library(gt)
+library(tidyverse)
+library(maps)
+
+site_locations <- read_csv("data/breeding_site_locations.csv")
+gt(head(site_locations))
+migration_sites <- read_csv("data/migratory_connectivity_dataset.csv")
+gt(head(migration_sites))
+
+selected_sites <- site_locations |> select(Site, Longitude, Latitude) |> distinct() |>
+  rename(Breeding_Longitude = Longitude, Breeding_Latitude = Latitude)
+gt(selected_sites)
+
+selected_migration_sites <- migration_sites |> select(Site, winterLongitude, winterLatitude, pslon, pslat, iblon, iblat, awestlon, awestlat) |>
+  distinct() |>
+  rename(Winter_Longitude = winterLongitude, Winter_Latitude = winterLatitude, 
+         Stopover_Longitude = pslon, Stopover_Latitude = pslat, Iberian_Longitude = iblon,
+         Iberian_Latitude = iblat, Westmost_Longitude = awestlon, Westmost_Latitude = awestlat)
+gt(selected_migration_sites)
+
+
+```
+```{r}
+bird_breeding_exc <- site_locations |> filter(Site != "Spain")
+gt(bird_breeding_exc)
+
+bird_migration_exc <- migration_sites |> filter(Site != "Spain")
+gt(bird_migration_exc)
+```
+
+
+
+.

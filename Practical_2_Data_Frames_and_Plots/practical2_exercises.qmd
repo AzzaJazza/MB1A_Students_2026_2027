@@ -1,0 +1,21 @@
+---
+title: "practical2_exercises"
+author: "Aryan Jaiswal"
+---
+
+```{r}
+
+input_vec <- c(5, -10, 4, -3)
+ans = input_vec |> mean() |> abs() |> round()
+print(ans)
+
+
+y <- 12
+
+print(y==7)
+print(y<15)
+print(y>20)
+print(y<=20)
+
+```
+
