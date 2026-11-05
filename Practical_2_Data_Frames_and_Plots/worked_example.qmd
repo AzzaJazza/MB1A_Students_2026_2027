@@ -93,3 +93,13 @@ gt(autumn_data)
 write_csv(spring_data, "output/birds_spring.csv")
 write_csv(autumn_data, "output/birds_autumn.csv")
 ```
+
+```{r}
+ggplot(spring_data, aes(
+  x = "Longitude",
+  y = "Latitude"
+)) +
+  geom_point()
+```
+
+
